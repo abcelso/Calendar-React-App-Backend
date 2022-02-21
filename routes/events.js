@@ -15,7 +15,7 @@ router.get('/', getEvents);
 router.post('/',
 [
     check('title','El campo title es obligatorio').not().isEmpty(),
-    check('start','La fecha de inicio es obligatoria').custom( isDate ),
+    check('start','La fecha de inicio es obligatoria').not().custom( isDate ),
     check('end','La fecha de finalización es obligatoria').not().custom( isDate ),
     validarCampos
 ],
